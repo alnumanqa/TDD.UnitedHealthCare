@@ -1,8 +1,7 @@
 package uhc.tdd.homepageTest;
 
 import org.testng.annotations.Test;
-
-import com.uhc.base.BaseClass;
+import base.BaseClass;
 
 public class HomepageTest extends BaseClass {
 	

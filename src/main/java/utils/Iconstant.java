@@ -1,4 +1,4 @@
-package com.uhc.utils;
+package utils;
 
 public interface Iconstant {
 	

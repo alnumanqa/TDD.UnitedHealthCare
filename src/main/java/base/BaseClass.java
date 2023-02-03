@@ -1,4 +1,4 @@
-package com.uhc.base;
+package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,10 +7,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import static com.uhc.utils.Iconstant.*;
+
+import static utils.Iconstant.*;
+
 import java.time.Duration;
-import com.uhc.utils.ReadProperties;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.ReadProperties;
 
 public class BaseClass {
 
@@ -25,6 +28,7 @@ public class BaseClass {
 	@BeforeMethod
 	public void setUpDriver() {
 		initDriver(envVar.getProperties(BROWSER));
+		initClasses(driver);
 		driver.get(envVar.getProperties(URL));
 		long pageloadWait = envVar.getNumProperties(PAGELOAD_WAIT);
 		long implicitWait = envVar.getNumProperties(IMPLICIT_WAIT);
@@ -52,6 +56,10 @@ public class BaseClass {
 			break;
 		}
 
+	}
+	
+	private void initClasses(WebDriver driver) {
+		
 	}
 	
 	@AfterMethod
